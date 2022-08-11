@@ -2,12 +2,28 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+<head>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+</head>
 <div class="card shadow-sm rounded mt-3 mx-auto" style="width:100%">
     <div class="card-body p-5">
         <div style="text-align:center">
             <h3>View data</h3>
         </div>
         <br/>
+        <div class="mt-4">
+            <input id="myInput" type="text" placeholder="Search..." class="form-control">
+        </div>
     <table class="table" style="width:100%">
     <thead>
         <tr>
@@ -38,7 +54,7 @@
             <th></th>
 		</tr>
 	</thead>
-    <tbody>
+    <tbody id="myTable">
         @foreach(var sale in Model)
         {
             <tr>
