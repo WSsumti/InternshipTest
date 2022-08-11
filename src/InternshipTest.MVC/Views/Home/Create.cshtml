@@ -1,0 +1,56 @@
+﻿@model Sale
+@{
+    ViewData["Title"] = "Create page";
+}
+<div class="card shadow-sm rounded mt-3 mx-auto" style="width:35%">
+    <div class="card-body p-5">
+        <div style="text-align:center">
+            <h3>Create</h3>
+        </div>
+        <br/>
+        <form asp-action="Create" method="post" class="mt-4">
+            <div class="mb-4">
+                <label asp-for="SalesOrder" class="form-label">SalesOrder</label>
+                <input asp-for="SalesOrder" class="form-control"/>
+                <span asp-validation-for="SalesOrder" class="text-danger"></span>
+            </div>
+            <div class="mb-4">
+                <label asp-for="SalesOrderItem" class="form-label">SalesOrderItem</label>
+                <input asp-for="SalesOrderItem" class="form-control"/>
+                <span asp-validation-for="SalesOrderItem" class="text-danger"></span>
+            </div>
+            <div class="mb-4">
+                <label asp-for="WorkOrder" class="form-label">WorkOrder</label>
+                <input asp-for="WorkOrder" class="form-control"/>
+                <span asp-validation-for="WorkOrder" class="text-danger"></span>
+            </div>
+            <div class="mb-4">
+                <label asp-for="ProductID" class="form-label">ProductID</label>
+                <input asp-for="ProductID" class="form-control"/>
+                <span asp-validation-for="ProductID" class="text-danger"></span>
+            </div>
+            <div class="mb-4">
+                <label asp-for="ProductDescription" class="form-label">ProductDescription</label>
+                <input asp-for="ProductDescription" class="form-control"/>
+                <span asp-validation-for="ProductDescription" class="text-danger"></span>
+            </div>
+            <div class="mb-4">
+                <label asp-for="OrderQuantity" class="form-label">OrderQuantity</label>
+                <input asp-for="OrderQuantity" class="form-control"/>
+                <span asp-validation-for="OrderQuantity" class="text-danger"></span>
+            </div>
+            <div class="mb-4">
+                <label asp-for="OrderStatus" class="form-label">OrderStatus</label>
+                <input asp-for="OrderStatus" class="form-control"/>
+                <span asp-validation-for="OrderStatus" class="text-danger"></span>
+            </div>
+            <div class="mb-4">
+                <label asp-for="Timestamp" class="form-label">Timestamp</label>
+                <input asp-for="Timestamp" class="form-control"/>
+                <span asp-validation-for="Timestamp" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn-primary btn-primary mt-3" style="width:100%">Submit</button>
+        </form>
+    </div>
+</div>
